@@ -47,6 +47,6 @@ def pag_infos():
 
 @app.route("/escreva")
 def pag_escreva():
-     return render_template("PagEscreva.html")
+     return render_template("PagEscreva.html", frases = lista_adjetivos)
 
 app.run(debug=True)

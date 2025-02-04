@@ -39,25 +39,28 @@
             <div class="input-field col s6">
                 <textarea id="icon_prefix2" class="materialize-textarea" ></textarea>
                 <label for="icon_prefix2" style="color: rgb(98, 150, 133); font-size: 20px; font-weight: 700;">Escreva uma curiosidade sobre  tartarugas</label>
+                
             </div>
-
             <button class="btn waves-effect teal lighten-2" type="submit" name="action">Enviar
                 <i class="material-icons right">send</i>
             </button>
+            
 
             </div>
         </form>
     </div>
 
+    {% for frase in frases %}
     <div class="row">
         <div class="col s12 m5">
             <div class="card-panel teal lighten-2">
                 <span class="white-text">
-
+                    {{frase}}
                 </span>
             </div>
         </div>
     </div>
+    {% endfor %}
 
 </body>
 
