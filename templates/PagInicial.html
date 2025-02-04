@@ -11,19 +11,20 @@
         padding: 0; 
         margin: 0; 
         box-sizing: border-box;  
+        font-family: sans-serif;
     } 
 </style>
 
 <body style="background-color: {{cor_de_fundo_html}};">
 
-    <header style="background-color: rgb(69, 154, 140); display: flex;  ">
+    <header style="background-color: rgb(69, 154, 140); display: flex; align-items: center; height: 80px;">
         <h1 style="margin-left: 10px;">Vovô Tartaruga</h1>
-        <span style="margin-left: 950px; margin-right: 10px;">Home</span>
-        <span><a href="sobre">Sobre</a></span>
+        <span style="margin-left: 1350px; margin-right: 10px; font-size: 20px; font-weight: 700;"> <a href="infos"> Infos </a></span>
     </header>
 
     <section class="caixa-geral" style="display: flex; flex-direction: row; margin: 20px;">
-        <div class="caixa-texto">
+        
+        <div class="caixa-texto" style="width: 700px;">
             <h1 class="titulo" style="font-family: sans-serif; margin-bottom: 10px;">Vovô Tartaruga🐢</h1>
             <p class="texto" style="font-family:sans-serif;">
                 Bem-vindo ao Vovô Tartaruga! 🐢
@@ -40,7 +41,9 @@
 
                 Prepare-se para uma jornada lenta, mas cheia de descobertas incríveis. 🐢✨</p>
         </div>
+
         <img src="/static/img/vovo-tartaruga.png" alt="vovo-tartaruga" style="width: 250px; height: 250px;">
+
     </section>
 </body>
 </html>

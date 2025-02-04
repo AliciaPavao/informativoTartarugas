@@ -24,6 +24,12 @@ lista_adjetivos = [
     "Importantes para o meio ambiente."]
 
 # Lista de imagens
+lista_imagens = [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.jpg"]
 
 # Aqui irá todas as minhas rotas
 @app.route("/sobre")
@@ -35,7 +41,8 @@ def pag_sobre():
 def pag_infos():
     cor_de_fundo = random.choice(lista_cores)
     adjetivos_aleatorios = random.choice(lista_adjetivos)
+    imagens_aleatorias = random.choice(lista_imagens)
     return render_template("PagAleatorio.html", cor_de_fundo_html = cor_de_fundo, 
-                           adjetivos_aleatorios_html = adjetivos_aleatorios)
+                           adjetivos_aleatorios_html = adjetivos_aleatorios, imagens_aleatorias_html = imagens_aleatorias)
 
 app.run(debug=True)
