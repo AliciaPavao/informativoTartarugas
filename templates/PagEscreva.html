@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando o framework Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Importando os icones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Página Escreva</title>
+</head>
+
+<style>
+    *{
+        padding: 0; 
+        margin: 0; 
+        box-sizing: border-box;  
+        font-family: sans-serif;
+    } 
+</style>
+
+<body style="background-color: rgb(195, 255, 245);"">
+    
+    <header style="background-color: rgb(69, 154, 140); display: flex; align-items: center; height: 80px;">
+        <h1 style="margin-left: 10px; font-family: sans-serif; font-size: 40px; font-weight:700;">Vovô Tartaruga</h1>
+        <span style="margin-left: 1350px; margin-right: 10px; font-size: 20px; font-weight: 700; font-family: sans-serif;"> <a href="infos"> Infos </a></span>
+    </header>
+
+    <!-- Caixa de texto para o cadastro das frases -->
+    <div class="row">
+        <form class="col s12" >
+            <div class="row">
+
+            <div class="input-field col s6">
+                <textarea id="icon_prefix2" class="materialize-textarea" ></textarea>
+                <label for="icon_prefix2" style="color: rgb(98, 150, 133); font-size: 20px; font-weight: 700;">Escreva uma curiosidade sobre  tartarugas</label>
+            </div>
+
+            <button class="btn waves-effect teal lighten-2" type="submit" name="action">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m5">
+            <div class="card-panel teal lighten-2">
+                <span class="white-text">
+
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

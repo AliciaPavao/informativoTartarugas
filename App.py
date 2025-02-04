@@ -45,4 +45,8 @@ def pag_infos():
     return render_template("PagAleatorio.html", cor_de_fundo_html = cor_de_fundo, 
                            adjetivos_aleatorios_html = adjetivos_aleatorios, imagens_aleatorias_html = imagens_aleatorias)
 
+@app.route("/escreva")
+def pag_escreva():
+     return render_template("PagEscreva.html")
+
 app.run(debug=True)
