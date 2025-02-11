@@ -1,6 +1,6 @@
 import random
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 # Padrão de criação do app
 app = Flask(__name__)
@@ -37,7 +37,7 @@ def pag_sobre():
     cor_de_fundo = random.choice(lista_cores)
     return render_template("PagInicial.html", cor_de_fundo_html = cor_de_fundo)
 
-@app.route("/infos")
+@app.route("/", methods=["GET"])
 def pag_infos():
     cor_de_fundo = random.choice(lista_cores)
     adjetivos_aleatorios = random.choice(lista_adjetivos)
@@ -45,8 +45,19 @@ def pag_infos():
     return render_template("PagAleatorio.html", cor_de_fundo_html = cor_de_fundo, 
                            adjetivos_aleatorios_html = adjetivos_aleatorios, imagens_aleatorias_html = imagens_aleatorias)
 
-@app.route("/escreva")
+@app.route("/escreva", methods=["GET"])
 def pag_escreva():
      return render_template("PagEscreva.html", frases = lista_adjetivos)
+
+@app.route("/cores", methods=["GET"])
+def pag_cores():
+     return render_template("PagCor.html", cores = lista_cores)
+
+@app.route("/post/cadastrarfrase", methods=["POST"])
+def post_cadastrarfrase():
+    frase_vinda_do_html = request.form.get("frase")
+    lista_adjetivos.append(frase_vinda_do_html)
+    return redirect("/escreva")
+
 
 app.run(debug=True)
