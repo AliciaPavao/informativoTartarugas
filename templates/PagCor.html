@@ -12,7 +12,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <title>Página Escreva</title>
+    <title>Página Cores</title>
 </head>
 
 <style>
@@ -34,12 +34,12 @@
 
     <!-- Caixa de texto para o cadastro das frases -->
     <div class="row">
-        <form class="col s12" action="/post/cadastrarfrase" method="post">
+        <form class="col s12" action="/post/cadastrarcor" method="post">
             <div class="row">
 
             <div class="input-field col s6" style="margin-left: 40px;">
-                <textarea name="frase" id="icon_prefix2" class="materialize-textarea" ></textarea>
-                <label for="icon_prefix2" style="color: rgb(98, 150, 133); font-size: 20px; font-weight: 700;">Escreva uma curiosidade sobre  tartarugas</label>
+                <textarea name="cor" id="icon_prefix2" class="materialize-textarea" ></textarea>
+                <label for="icon_prefix2" style="color: rgb(98, 150, 133); font-size: 20px; font-weight: 700;">Coloque o código de uma cor para o fundo do site</label>
             </div>
 
             <button class="btn waves-effect teal lighten-2" type="submit" name="action" style="margin-top: 20px;">Enviar
@@ -50,12 +50,12 @@
         </form>
     </div>
 
-    {% for frase in frases %}
+    {% for cor in cores %}
     <div class="row" style="margin-left: 40px;">
         <div class="col s12 m5">
-            <div class="card-panel teal lighten-2">
+            <div class="card-panel" style="background-color: {{cor}};">
                 <span class="white-text">
-                    {{frase}}
+                    {{cor}}
                 </span>
             </div>
         </div>

@@ -45,13 +45,20 @@ def pag_infos():
     return render_template("PagAleatorio.html", cor_de_fundo_html = cor_de_fundo, 
                            adjetivos_aleatorios_html = adjetivos_aleatorios, imagens_aleatorias_html = imagens_aleatorias)
 
-@app.route("/escreva", methods=["GET"])
-def pag_escreva():
-     return render_template("PagEscreva.html", frases = lista_adjetivos)
 
 @app.route("/cores", methods=["GET"])
 def pag_cores():
      return render_template("PagCor.html", cores = lista_cores)
+
+@app.route("/post/cadastrarcor", methods=["POST"])
+def post_cadastrarcor():
+    cor_vinda_do_html = request.form.get("cor")
+    lista_cores.append(cor_vinda_do_html)
+    return redirect("/cores")
+
+@app.route("/escreva", methods=["GET"])
+def pag_escreva():
+     return render_template("PagEscreva.html", frases = lista_adjetivos)
 
 @app.route("/post/cadastrarfrase", methods=["POST"])
 def post_cadastrarfrase():
