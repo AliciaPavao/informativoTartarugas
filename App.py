@@ -32,11 +32,14 @@ lista_imagens = [
     "05.jpg"]
 
 # Aqui irá todas as minhas rotas
+
+# Pag sobre
 @app.route("/sobre")
 def pag_sobre():
     cor_de_fundo = random.choice(lista_cores)
     return render_template("PagInicial.html", cor_de_fundo_html = cor_de_fundo)
 
+# Pag infos
 @app.route("/", methods=["GET"])
 def pag_infos():
     cor_de_fundo = random.choice(lista_cores)
@@ -46,6 +49,7 @@ def pag_infos():
                            adjetivos_aleatorios_html = adjetivos_aleatorios, imagens_aleatorias_html = imagens_aleatorias)
 
 
+# Cor
 @app.route("/cores", methods=["GET"])
 def pag_cores():
      return render_template("PagCor.html", cores = lista_cores)
@@ -56,7 +60,16 @@ def post_cadastrarcor():
     lista_cores.append(cor_vinda_do_html)
     return redirect("/cores")
 
+@app.route("/cores/delete/<indice_cor>", methods=["GET"])
+def delete_cores(indice_cor):
+    # Lembrar de converter o int para inteiro - pois ele vem como string
+    indice_cor = int(indice_cor)
+    # Excluir a cor da lista através do indice
+    lista_cores.pop(indice_cor)
+    return redirect("/cores")
 
+
+# Escrever
 @app.route("/escreva", methods=["GET"])
 def pag_escreva():
      return render_template("PagEscreva.html", frases = lista_adjetivos)
