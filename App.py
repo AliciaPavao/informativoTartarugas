@@ -56,6 +56,7 @@ def post_cadastrarcor():
     lista_cores.append(cor_vinda_do_html)
     return redirect("/cores")
 
+
 @app.route("/escreva", methods=["GET"])
 def pag_escreva():
      return render_template("PagEscreva.html", frases = lista_adjetivos)
@@ -66,5 +67,7 @@ def post_cadastrarfrase():
     lista_adjetivos.append(frase_vinda_do_html)
     return redirect("/escreva")
 
+# Post - Envia uma informção
+# Get - Pega uma informação
 
 app.run(debug=True)
