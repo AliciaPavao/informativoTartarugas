@@ -1,6 +1,6 @@
 import random
 
-from .data import listas_configuracao as listas
+from data import listas_configuracao as listas
 from flask import Flask, render_template, request, redirect
 
 # Padrão de criação do app
